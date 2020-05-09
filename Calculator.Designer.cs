@@ -41,6 +41,7 @@
             this.button0 = new System.Windows.Forms.Button();
             this.buttonDecimal = new System.Windows.Forms.Button();
             this.buttonBackspace = new System.Windows.Forms.Button();
+            this.buttonSign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Display
@@ -184,11 +185,23 @@
             this.buttonBackspace.UseVisualStyleBackColor = true;
             this.buttonBackspace.Click += new System.EventHandler(this.buttonBackspace_Click);
             // 
+            // buttonSign
+            // 
+            this.buttonSign.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.buttonSign.Location = new System.Drawing.Point(39, 356);
+            this.buttonSign.Name = "buttonSign";
+            this.buttonSign.Size = new System.Drawing.Size(77, 77);
+            this.buttonSign.TabIndex = 13;
+            this.buttonSign.Text = "+/-";
+            this.buttonSign.UseVisualStyleBackColor = true;
+            this.buttonSign.Click += new System.EventHandler(this.buttonSign_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 495);
+            this.Controls.Add(this.buttonSign);
             this.Controls.Add(this.buttonBackspace);
             this.Controls.Add(this.buttonDecimal);
             this.Controls.Add(this.button0);
@@ -224,6 +237,7 @@
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button buttonDecimal;
         private System.Windows.Forms.Button buttonBackspace;
+        private System.Windows.Forms.Button buttonSign;
     }
 }
 
