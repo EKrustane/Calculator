@@ -27,7 +27,7 @@ namespace Calculator
             this.BackColor = Color.PeachPuff;
             string buttonName = null;
             Button button = null;
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 buttonName = "button" + i;
                 button = (Button)this.Controls[buttonName];
@@ -35,8 +35,9 @@ namespace Calculator
                 button.BackColor = Color.Black;
                 button.ForeColor = Color.White;
                 button.Font = new Font("Consolas", 22f);
+                buttonDecimal.Text = ".";
             }
-            
+
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -44,6 +45,26 @@ namespace Calculator
             Button button = (Button)sender;
             Display.Text += button.Text;
         }
+        
+        private void buttonDecimal_Click(object sender, EventArgs e)
+        {
+            if (!Display.Text.Contains("."))
+            {
+                if (Display.Text == string.Empty)
+                {
+                    Display.Text += "0.";
+                }
+                else
+                {
+                    Display.Text += ".";
+                }
+            }
+        }
+
+        private void buttonBackspace_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-  
+
 }
