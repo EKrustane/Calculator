@@ -103,6 +103,31 @@ namespace Calculator
 
             }
         }
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMultiply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSubstract_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDivide_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
