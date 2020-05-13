@@ -46,6 +46,7 @@
             this.buttonSubstract = new System.Windows.Forms.Button();
             this.buttonMultiply = new System.Windows.Forms.Button();
             this.buttonDivide = new System.Windows.Forms.Button();
+            this.buttonResult = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Display
@@ -209,7 +210,7 @@
             this.buttonAdd.TabIndex = 14;
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.Operation_Click);
             // 
             // buttonSubstract
             // 
@@ -220,7 +221,7 @@
             this.buttonSubstract.TabIndex = 15;
             this.buttonSubstract.Text = "-";
             this.buttonSubstract.UseVisualStyleBackColor = true;
-            this.buttonSubstract.Click += new System.EventHandler(this.buttonSubstract_Click);
+            this.buttonSubstract.Click += new System.EventHandler(this.Operation_Click);
             // 
             // buttonMultiply
             // 
@@ -231,7 +232,7 @@
             this.buttonMultiply.TabIndex = 16;
             this.buttonMultiply.Text = "x";
             this.buttonMultiply.UseVisualStyleBackColor = true;
-            this.buttonMultiply.Click += new System.EventHandler(this.buttonMultiply_Click);
+            this.buttonMultiply.Click += new System.EventHandler(this.Operation_Click);
             // 
             // buttonDivide
             // 
@@ -242,13 +243,25 @@
             this.buttonDivide.TabIndex = 17;
             this.buttonDivide.Text = "/";
             this.buttonDivide.UseVisualStyleBackColor = true;
-            this.buttonDivide.Click += new System.EventHandler(this.buttonDivide_Click);
+            this.buttonDivide.Click += new System.EventHandler(this.Operation_Click);
+            // 
+            // buttonResult
+            // 
+            this.buttonResult.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.buttonResult.Location = new System.Drawing.Point(39, 439);
+            this.buttonResult.Name = "buttonResult";
+            this.buttonResult.Size = new System.Drawing.Size(341, 77);
+            this.buttonResult.TabIndex = 18;
+            this.buttonResult.Text = "=";
+            this.buttonResult.UseVisualStyleBackColor = true;
+            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 495);
+            this.ClientSize = new System.Drawing.Size(417, 525);
+            this.Controls.Add(this.buttonResult);
             this.Controls.Add(this.buttonDivide);
             this.Controls.Add(this.buttonMultiply);
             this.Controls.Add(this.buttonSubstract);
@@ -268,8 +281,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Display);
             this.Name = "Calculator";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Calculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,6 +306,7 @@
         private System.Windows.Forms.Button buttonSubstract;
         private System.Windows.Forms.Button buttonMultiply;
         private System.Windows.Forms.Button buttonDivide;
+        private System.Windows.Forms.Button buttonResult;
     }
 }
 

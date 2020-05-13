@@ -12,16 +12,15 @@ namespace Calculator
 {
     public partial class Calculator : Form
     {
+        double numOne = 0;
+        double numTwo = 0;
+        string operation;
         public Calculator()
         {
             InitializeComponent();
             InitializeCalculator();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
         private void InitializeCalculator()
         {
             this.BackColor = Color.PeachPuff;
@@ -104,30 +103,37 @@ namespace Calculator
             }
         }
 
-        private void Calculator_Load(object sender, EventArgs e)
+         private void buttonResult_Click(object sender, EventArgs e)
         {
+            numTwo = Convert.ToDouble(Display.Text);
+            if(operation=="+")
+            {
+                Display.Text = (numOne + numTwo).ToString();
+            }
+            else if (operation=="-")
+            {
+                Display.Text = (numOne - numTwo).ToString();
+            }
+            else if (operation=="x")
+            {
+                Display.Text = (numOne * numTwo).ToString();
+            }
+            else if (operation=="/")
+            {
+                Display.Text = (numOne / numTwo).ToString();
+            }
+        }
+        private void Operation_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            numOne = Convert.ToDouble(Display.Text);
+            Display.Text = string.Empty;
+            operation = button.Text;
 
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void buttonMultiply_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonSubstract_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonDivide_Click(object sender, EventArgs e)
-        {
-
-        }
     }
+
 
 }
