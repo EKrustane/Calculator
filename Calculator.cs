@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +21,9 @@ namespace Calculator
         string secondOperation;
         bool operationInserted = false;
         bool scifiMode = false;
-        const int widthSmall = 295;
+        const int widthSmall = 293;
         const int widthLarge = 490;
+        int sliderValue = 0;
         public Calculator()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace Calculator
 
         private void InitializeCalculator()
         {
-            this.BackColor = Color.PeachPuff;
+            this.BackColor = Color.LightGray;
             this.Width = widthSmall;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -43,8 +45,6 @@ namespace Calculator
                 buttonName = "button" + i;
                 button = (Button)this.Controls[buttonName];
                 button.Text = i.ToString();
-                button.BackColor = Color.Black;
-                button.ForeColor = Color.White;
                 button.Font = new Font("Consolas", 22f);
                 buttonDecimal.Text = ".";
             }
@@ -212,6 +212,43 @@ namespace Calculator
             }
             scifiMode = !scifiMode;
         }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            sliderValue = trackBar1.Value;
+            string labelName = null;
+            string buttonName = null;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j=1;j<=2;j++)
+                {
+                    labelName = "label" + j;
+                    buttonName = "button" + i;
+                    if (trackBar1.Value == trackBar1.Maximum)
+                    {
+                        this.Controls[labelName].ForeColor = Color.White;
+                        this.BackColor = Color.Black;
+                        this.Controls[buttonName].BackColor = Color.Black;
+                        this.Controls[buttonName].ForeColor = Color.White;
+                    }
+                    else if (trackBar1.Value == trackBar1.Minimum)
+                    {
+                        this.Controls[labelName].ForeColor = Color.Black;
+                        this.BackColor = Color.LightGray;
+                        this.Controls[buttonName].BackColor = Color.White;
+                        this.Controls[buttonName].ForeColor = Color.Black;
+                    }
+                }
+                
+
+
+            }
+
+        
+      
+
+        }
+        
     }
 
 
