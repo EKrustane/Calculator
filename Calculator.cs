@@ -19,6 +19,9 @@ namespace Calculator
         string operation;
         string secondOperation;
         bool operationInserted = false;
+        bool scifiMode = false;
+        const int widthSmall = 295;
+        const int widthLarge = 490;
         public Calculator()
         {
             InitializeComponent();
@@ -28,6 +31,10 @@ namespace Calculator
         private void InitializeCalculator()
         {
             this.BackColor = Color.PeachPuff;
+            this.Width = widthSmall;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             string buttonName = null;
             Button button = null;
             Display.Text = "0";
@@ -127,12 +134,18 @@ namespace Calculator
             {
                 numOne = numOne / numTwo;
             }
+            else if (operation=="^")
+            {
+                numOne = Math.Pow(numOne, numTwo);
+            }
+
             Display.Text = numOne.ToString();
             operationInserted = false;
         }
         private void Operation_Click(object sender, EventArgs e)
         {
-           if (!operationInserted)
+            Button button = (Button)sender;
+            if (!operationInserted)
             {
                 lenghtOfNumOne = Display.Text.Length;
                 numOne = Convert.ToDouble(Display.Text);
@@ -162,10 +175,20 @@ namespace Calculator
                 {
                     numOne = numOne / numTwo;
                 }
+                else if (operation =="^")
+                {
+                    numOne = Math.Pow(numOne, numTwo);
+                }
+
                 Display.Text = numOne.ToString();
                 lenghtOfNumOne = Display.Text.Length;
                 Display.Text += secondOperation;
                 operation = secondOperation;
+            }
+           if (button.Text== "√")
+            {
+                Display.Text = Math.Sqrt(numOne).ToString();
+                return;
             }
 
 
@@ -175,6 +198,19 @@ namespace Calculator
         {
             Display.Text = "0";
             operationInserted = false;
+        }
+
+        private void buttonSciFi_Click(object sender, EventArgs e)
+        {
+            if(scifiMode)
+            {
+                this.Width = widthSmall;
+            }
+            else
+            {
+                this.Width = widthLarge;
+            }
+            scifiMode = !scifiMode;
         }
     }
 
