@@ -144,6 +144,7 @@ namespace Calculator
         }
         private void Operation_Click(object sender, EventArgs e)
         {
+            
             Button button = (Button)sender;
             if (!operationInserted)
             {
@@ -180,17 +181,23 @@ namespace Calculator
                     numOne = Math.Pow(numOne, numTwo);
                 }
 
+
                 Display.Text = numOne.ToString();
                 lenghtOfNumOne = Display.Text.Length;
                 Display.Text += secondOperation;
                 operation = secondOperation;
             }
-           if (button.Text== "√")
+           if (button.Text == "√")
             {
                 Display.Text = Math.Sqrt(numOne).ToString();
                 return;
             }
-
+           if (button.Text == "%")
+            {
+                numTwo = 0.01;
+                Display.Text = (numOne * numTwo).ToString();
+                return;
+            }
 
         }
 
