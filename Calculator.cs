@@ -14,7 +14,11 @@ namespace Calculator
     {
         double numOne = 0;
         double numTwo = 0;
+        int lenghtOfNumOne = 0;
+        string expression;
         string operation;
+        string secondOperation;
+        bool operationInserted = false;
         public Calculator()
         {
             InitializeComponent();
@@ -105,34 +109,73 @@ namespace Calculator
 
          private void buttonResult_Click(object sender, EventArgs e)
         {
-            double result = 0;
-            numTwo = Convert.ToDouble(Display.Text);
-            if(operation=="+")
+            expression = Display.Text.Substring(lenghtOfNumOne + 1, Display.Text.Length - lenghtOfNumOne - 1);
+            numTwo = Convert.ToDouble(expression);
+            if (operation=="+")
             {
-                result = numOne + numTwo;
+                numOne = numOne + numTwo;
             }
             else if (operation=="-")
             {
-                result = numOne - numTwo;
+                numOne = numOne - numTwo;
             }
             else if (operation=="x")
             {
-                result = numOne * numTwo;
+                numOne = numOne * numTwo;
             }
             else if (operation=="/")
             {
-                result = numOne / numTwo;
+                numOne = numOne / numTwo;
             }
-            Display.Text = result.ToString();
+            Display.Text = numOne.ToString();
+            operationInserted = false;
         }
         private void Operation_Click(object sender, EventArgs e)
         {
-            numOne = Convert.ToDouble(Display.Text);
-            Display.Text = string.Empty;
-            operation = ((Button)sender).Text;
+           if (!operationInserted)
+            {
+                lenghtOfNumOne = Display.Text.Length;
+                numOne = Convert.ToDouble(Display.Text);
+                operation = ((Button)sender).Text;
+                Display.Text += operation;
+                operationInserted = true;
+            }
+           else
+            {
+                secondOperation = ((Button)sender).Text;
+                expression = Display.Text.Substring(lenghtOfNumOne + 1, Display.Text.Length - lenghtOfNumOne - 1);
+                numTwo = Convert.ToDouble(expression);
+
+                if (operation == "+")
+                {
+                    numOne = numOne + numTwo;
+                }
+                else if (operation == "-")
+                {
+                    numOne = numOne - numTwo;
+                }
+                else if (operation == "x")
+                {
+                    numOne = numOne * numTwo;
+                }
+                else if (operation == "/")
+                {
+                    numOne = numOne / numTwo;
+                }
+                Display.Text = numOne.ToString();
+                lenghtOfNumOne = Display.Text.Length;
+                Display.Text += secondOperation;
+                operation = secondOperation;
+            }
+
 
         }
 
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            Display.Text = "0";
+            operationInserted = false;
+        }
     }
 
 
