@@ -105,30 +105,31 @@ namespace Calculator
 
          private void buttonResult_Click(object sender, EventArgs e)
         {
+            double result = 0;
             numTwo = Convert.ToDouble(Display.Text);
             if(operation=="+")
             {
-                Display.Text = (numOne + numTwo).ToString();
+                result = numOne + numTwo;
             }
             else if (operation=="-")
             {
-                Display.Text = (numOne - numTwo).ToString();
+                result = numOne - numTwo;
             }
             else if (operation=="x")
             {
-                Display.Text = (numOne * numTwo).ToString();
+                result = numOne * numTwo;
             }
             else if (operation=="/")
             {
-                Display.Text = (numOne / numTwo).ToString();
+                result = numOne / numTwo;
             }
+            Display.Text = result.ToString();
         }
         private void Operation_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
             numOne = Convert.ToDouble(Display.Text);
             Display.Text = string.Empty;
-            operation = button.Text;
+            operation = ((Button)sender).Text;
 
         }
 
