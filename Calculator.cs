@@ -21,8 +21,8 @@ namespace Calculator
         string secondOperation;
         bool operationInserted = false;
         bool scifiMode = false;
-        const int widthSmall = 293;
-        const int widthLarge = 490;
+        const int widthSmall = 285;
+        const int widthLarge = 360;
         int sliderValue = 0;
         public Calculator()
         {
@@ -198,6 +198,23 @@ namespace Calculator
                 Display.Text = (numOne * numTwo).ToString();
                 return;
             }
+            if (button.Text == "sin")
+            {
+                Display.Text = Math.Sin(numOne).ToString();
+                return;
+            }
+            if (button.Text == "cos")
+            {
+                Display.Text = Math.Cos(numOne).ToString();
+                return;
+            }
+            if (button.Text == "tg")
+            {
+                Display.Text = Math.Tan(numOne).ToString();
+                return;
+            }
+
+
 
         }
 
