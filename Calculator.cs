@@ -272,7 +272,12 @@ namespace Calculator
       
 
         }
-        
+
+        private void buttonPi_Click(object sender, EventArgs e)
+        {
+            double pi = 3.14;
+            Display.Text = pi.ToString();
+        }
     }
 
 

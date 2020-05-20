@@ -55,7 +55,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.buttonPi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSciFi = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
@@ -296,9 +296,9 @@
             // 
             this.buttonPower.BackColor = System.Drawing.Color.MistyRose;
             this.buttonPower.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.buttonPower.Location = new System.Drawing.Point(402, 107);
+            this.buttonPower.Location = new System.Drawing.Point(402, 87);
             this.buttonPower.Name = "buttonPower";
-            this.buttonPower.Size = new System.Drawing.Size(85, 70);
+            this.buttonPower.Size = new System.Drawing.Size(85, 75);
             this.buttonPower.TabIndex = 20;
             this.buttonPower.Text = "^";
             this.buttonPower.UseVisualStyleBackColor = false;
@@ -308,9 +308,9 @@
             // 
             this.buttonSqrt.BackColor = System.Drawing.Color.MistyRose;
             this.buttonSqrt.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.buttonSqrt.Location = new System.Drawing.Point(402, 171);
+            this.buttonSqrt.Location = new System.Drawing.Point(402, 156);
             this.buttonSqrt.Name = "buttonSqrt";
-            this.buttonSqrt.Size = new System.Drawing.Size(85, 70);
+            this.buttonSqrt.Size = new System.Drawing.Size(85, 75);
             this.buttonSqrt.TabIndex = 21;
             this.buttonSqrt.Text = "√";
             this.buttonSqrt.UseVisualStyleBackColor = false;
@@ -320,9 +320,9 @@
             // 
             this.button11.BackColor = System.Drawing.Color.MistyRose;
             this.button11.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.button11.Location = new System.Drawing.Point(402, 239);
+            this.button11.Location = new System.Drawing.Point(402, 226);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(85, 70);
+            this.button11.Size = new System.Drawing.Size(85, 75);
             this.button11.TabIndex = 22;
             this.button11.Text = "%";
             this.button11.UseVisualStyleBackColor = false;
@@ -332,9 +332,9 @@
             // 
             this.button12.BackColor = System.Drawing.Color.MistyRose;
             this.button12.Font = new System.Drawing.Font("Consolas", 14F);
-            this.button12.Location = new System.Drawing.Point(402, 307);
+            this.button12.Location = new System.Drawing.Point(402, 291);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(85, 70);
+            this.button12.Size = new System.Drawing.Size(85, 75);
             this.button12.TabIndex = 23;
             this.button12.Text = "sin";
             this.button12.UseVisualStyleBackColor = false;
@@ -344,9 +344,9 @@
             // 
             this.button13.BackColor = System.Drawing.Color.MistyRose;
             this.button13.Font = new System.Drawing.Font("Consolas", 14F);
-            this.button13.Location = new System.Drawing.Point(402, 437);
+            this.button13.Location = new System.Drawing.Point(402, 427);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(85, 70);
+            this.button13.Size = new System.Drawing.Size(85, 75);
             this.button13.TabIndex = 24;
             this.button13.Text = "cos";
             this.button13.UseVisualStyleBackColor = false;
@@ -356,25 +356,25 @@
             // 
             this.button14.BackColor = System.Drawing.Color.MistyRose;
             this.button14.Font = new System.Drawing.Font("Consolas", 14F);
-            this.button14.Location = new System.Drawing.Point(402, 372);
+            this.button14.Location = new System.Drawing.Point(402, 356);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(85, 70);
+            this.button14.Size = new System.Drawing.Size(85, 75);
             this.button14.TabIndex = 25;
             this.button14.Text = "tg";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.Operation_Click);
             // 
-            // button18
+            // buttonPi
             // 
-            this.button18.BackColor = System.Drawing.Color.MistyRose;
-            this.button18.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.button18.Location = new System.Drawing.Point(402, 503);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(85, 70);
-            this.button18.TabIndex = 29;
-            this.button18.Text = "π";
-            this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.Operation_Click);
+            this.buttonPi.BackColor = System.Drawing.Color.MistyRose;
+            this.buttonPi.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.buttonPi.Location = new System.Drawing.Point(402, 498);
+            this.buttonPi.Name = "buttonPi";
+            this.buttonPi.Size = new System.Drawing.Size(85, 75);
+            this.buttonPi.TabIndex = 29;
+            this.buttonPi.Text = "π";
+            this.buttonPi.UseVisualStyleBackColor = false;
+            this.buttonPi.Click += new System.EventHandler(this.buttonPi_Click);
             // 
             // label1
             // 
@@ -426,7 +426,7 @@
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.buttonSciFi);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button18);
+            this.Controls.Add(this.buttonPi);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
@@ -490,7 +490,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button buttonPi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSciFi;
         private System.Windows.Forms.TrackBar trackBar1;
