@@ -213,9 +213,6 @@ namespace Calculator
                 Display.Text = Math.Tan(numOne).ToString();
                 return;
             }
-
-
-
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -263,14 +260,7 @@ namespace Calculator
                         this.Controls[buttonName].ForeColor = Color.Black;
                     }
                 }
-                
-
-
             }
-
-        
-      
-
         }
 
         private void buttonPi_Click(object sender, EventArgs e)
