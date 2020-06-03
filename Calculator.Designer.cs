@@ -210,7 +210,7 @@
             // buttonSign
             // 
             this.buttonSign.BackColor = System.Drawing.Color.MistyRose;
-            this.buttonSign.Font = new System.Drawing.Font("Consolas", 22F);
+            this.buttonSign.Font = new System.Drawing.Font("Consolas", 16F);
             this.buttonSign.Location = new System.Drawing.Point(35, 405);
             this.buttonSign.Name = "buttonSign";
             this.buttonSign.Size = new System.Drawing.Size(85, 85);
@@ -344,7 +344,7 @@
             // 
             this.button13.BackColor = System.Drawing.Color.MistyRose;
             this.button13.Font = new System.Drawing.Font("Consolas", 14F);
-            this.button13.Location = new System.Drawing.Point(402, 427);
+            this.button13.Location = new System.Drawing.Point(402, 356);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(85, 75);
             this.button13.TabIndex = 24;
@@ -356,7 +356,7 @@
             // 
             this.button14.BackColor = System.Drawing.Color.MistyRose;
             this.button14.Font = new System.Drawing.Font("Consolas", 14F);
-            this.button14.Location = new System.Drawing.Point(402, 356);
+            this.button14.Location = new System.Drawing.Point(402, 428);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(85, 75);
             this.button14.TabIndex = 25;
